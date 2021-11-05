@@ -1,6 +1,6 @@
 package lesson2;
 
-public class FirstProgram {
+public class SecondProgram {
 
     public static void main(String[] args) {
         System.out.println("Привет, мир всем!");
@@ -12,8 +12,11 @@ public class FirstProgram {
         long yetAnotherSumma = calculate(2,18);
         System.out.println(yetAnotherSumma);
 
-        long resultOfMinus = minus(2,18);
+        long resultOfMinus = minus(4,18);
         System.out.println(resultOfMinus);
+
+        long result = multiplyAndSumma(8);
+        System.out.println(result);
     }
 
     /**
@@ -32,5 +35,11 @@ public class FirstProgram {
 
     public static long minus(int arg1, int arg2) {
         return arg1 - arg2;
+    }
+
+    public static long multiplyAndSumma(int arg1) {
+        int result = 9 * arg1 + 20;
+    result= result - 50;
+    return result;
     }
 }
