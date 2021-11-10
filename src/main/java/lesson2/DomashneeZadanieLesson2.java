@@ -4,16 +4,16 @@ public class DomashneeZadanieLesson2 {
     public static void main(String[] args) {
 
         long resultDel = del(15,5);
-        System.out.println(resultDel);
+        System.out.println("Результат деления: " + resultDel);
 
         long summa = calculate(20,9);
-        System.out.println(summa);
+        System.out.println("Результат сложения: " + summa);
 
         long resultOfMinus = minus(22,26);
-        System.out.println(resultOfMinus);
+        System.out.println("Результат вычитания: " + resultOfMinus);
 
         long resultStreugolnik =Streugolnik(6,7);
-        System.out.println(resultStreugolnik);
+        System.out.println("Площадь треугольника равна: " + resultStreugolnik);
     }
 
     public static long del(int arg1, int arg2) {
