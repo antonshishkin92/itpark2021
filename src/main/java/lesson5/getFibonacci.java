@@ -10,6 +10,12 @@ public class getFibonacci {
         int a = 0;
         int b = 1;
         for (int i = 2; i <= n; ++i) {
+            /**
+             * Получение n-го по счёту числа Фибоначчи
+             * @param a - первое число
+             * @param b - второе число
+             * @param b = next - полученное число Фибоначчи при сложении двух последних чисел a и b
+             */
             int next = a + b;
             a = b;
             b = next;
