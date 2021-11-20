@@ -13,7 +13,7 @@ public class MatrixRunner {
     public static void fillFigure(int[][] array) {
         for (int i = 0; i < array.length; i++) { // перебор строк таблицы
             for (int j = 0; j < array[i].length; j++) {// перебор столбцов таблицы
-                if (i == j || j== array[i].length-1){
+                if (i == j || j == array[i].length - 1) {
                     array[i][j] = 1;
                 }
 
@@ -21,8 +21,8 @@ public class MatrixRunner {
         }
     }
 
-    public static void printFigure(int[][] matrix) {
-        for (int i = 0; i <array.length; i++) {
+    public static void printFigure(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
             System.out.println(Arrays.toString(array[i]));
         }
     }
