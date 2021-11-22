@@ -6,7 +6,7 @@ public class WordReducerRunner {
     public static void main(String[] args) {
         String[] words = {"Большой", "привет", "от", "слушателей", "ИТ парка", "от" };
         System.out.println(Arrays.toString(Intersect(words, "от")));
-        System.out.println(Arrays.toString(Intersect(words, "Привет")));
+        System.out.println(Arrays.toString(Intersect(words, "привет")));
     }
 
     public static String[] Intersect(String[] initialArray, String word) {
