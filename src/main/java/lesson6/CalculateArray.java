@@ -25,9 +25,9 @@ public class CalculateArray {
             avg += array[i] / array.length;
         }
 
-        System.out.println("Максимальное значение " + max);
-        System.out.println("Минимальное значение " + min);
-        System.out.println("Среднее значение " + avg);
+        System.out.println("Максимальное значение: " + max);
+        System.out.println("Минимальное значение: " + min);
+        System.out.println("Среднее значение: " + avg);
     }
 }
 
