@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ArrayFibonacci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Сколько чисел Фибоначчи вы хотите увидеть на консоле?");
+        System.out.println("Сколько чисел Фибоначчи вы хотите увидеть на экране?");
         int n = scanner.nextInt();
         int[] f = new int[n];
         f[0] = 0;
