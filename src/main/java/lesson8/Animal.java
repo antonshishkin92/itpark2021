@@ -11,7 +11,7 @@ public class Animal {
 
    public void speak(){
        this.voice = voice;
-       System.out.println(this.name + " Говорит " + this.voice);
+       System.out.println(this.name + " говорит " + this.voice);
    }
 
 

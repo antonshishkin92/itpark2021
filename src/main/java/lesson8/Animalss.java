@@ -2,9 +2,11 @@ package lesson8;
 
 public class Animalss {
     public static void main(String[] args) {
-        Cat albatros = new Cat("Альбатрос","мяу");
+        Cat albatros = new Cat("Альбатрос","");
         albatros.speak();
-        Dog dog = new Dog("Бобик", "гав");
-        System.out.println();
+        Dog bobik = new Dog("Бобик","");
+        bobik.speak();
+        System.out.println(albatros);
+        System.out.println(bobik);
     }
 }
