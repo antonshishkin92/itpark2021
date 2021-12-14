@@ -1,6 +1,6 @@
 package lesson8;
 
-public class Animal {
+class Animal {
     private String name;
     private String voice;
 
@@ -9,10 +9,10 @@ public class Animal {
         this.voice = voice;
     }
 
-   public void speak(){
-       this.voice = voice;
-       System.out.println(this.name + " говорит " + this.voice);
-   }
+    public void speak() {
+        this.voice = voice;
+        System.out.println(this.name + " говорит " + this.voice);
+    }
 
 
 }
