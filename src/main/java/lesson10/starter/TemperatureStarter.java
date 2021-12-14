@@ -1,7 +1,7 @@
 package lesson10.starter;
 
+import lesson10.Convertable;
 import lesson10.TemperatureMeasureSystem;
-import lesson10.UniversalConverter;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ double value=scanner.nextDouble();
         String temperatureSystem = scanner.next();
         System.out.println("Введи пожалуйста систему измерений в которой будет переведено значение (возможные варианты - C, K ,F): ");
         String destinationTemperatureSystem=scanner.next();
-        System.out.println("Результат: %.2f\n"+ UniversalConverter.convert(value,
+        System.out.println("Результат: %.2f\n " + Convertable.convert(value,
                 TemperatureMeasureSystem.of(temperatureSystem),
                 TemperatureMeasureSystem.of(destinationTemperatureSystem)));
     }
