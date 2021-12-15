@@ -1,7 +1,4 @@
-package lesson10.starter;
-
-import lesson10.Convertable;
-import lesson10.TemperatureMeasureSystem;
+package hw10.starter;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package lesson10;
+package hw10.starter;
 
 public enum TemperatureMeasureSystem {
     CELCIUS("C"),KELVIN("K"), FAHRENHEIT("F");

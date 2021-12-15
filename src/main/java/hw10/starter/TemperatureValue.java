@@ -1,4 +1,6 @@
-package lesson10;
+package hw10.starter;
+
+import hw10.starter.TemperatureMeasureSystem;
 
 public class TemperatureValue {
     private final double value;
