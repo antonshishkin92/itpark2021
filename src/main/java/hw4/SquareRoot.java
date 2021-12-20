@@ -1,4 +1,4 @@
-package lesson4;
+package hw4;
 
 public class SquareRoot {
     public static void main(String[] args) {
