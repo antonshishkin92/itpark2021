@@ -25,6 +25,6 @@ public class Kvadratnoeuravnenie {
             x1 = (-1) * b / 2 * a;
             System.out.println("Значение x1, x2 = " + x1);
         } else {
-            System.out.println("Нет действительных решений уравнения, потому что d < 0");}
+            System.out.println("Нет решений уравнения, потому что d < 0");}
     }
 }
