@@ -6,7 +6,7 @@ public class SquareRoot {
     }
 
     public static void calcroot() {
-        double number = 25, guess = 10;
+        double number = 34, guess = 9;
         double result, resultnew, endresult;
         result = (guess + (number / guess)) / 2; /** Эта формула называется метод Ньютона, для вычисления
          квадратного корня числа number, result - первое предположение корня числа number, guess - любое число наугад */
