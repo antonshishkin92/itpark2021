@@ -1,4 +1,4 @@
-package lesson3;
+package hw3;
 
 public class PoluchenieFaktoriala {
     public static void main(String[] args) {
