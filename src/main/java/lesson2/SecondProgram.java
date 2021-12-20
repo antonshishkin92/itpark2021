@@ -12,7 +12,7 @@ public class SecondProgram {
         long yetAnotherSumma = calculate(2, 18);
         System.out.println(yetAnotherSumma);
 
-        long resultOfMinus = minus(4, 18);
+        long resultOfMinus = minus(4, 17);
         System.out.println(resultOfMinus);
 
         long result = multiplyAndSumma(8);
