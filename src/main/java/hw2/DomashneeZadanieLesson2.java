@@ -12,7 +12,7 @@ public class DomashneeZadanieLesson2 {
         long resultOfMinus = minus(22,26);
         System.out.println("Результат вычитания: " + resultOfMinus);
 
-        long resultStreugolnik =Streugolnik(6,7);
+        long resultStreugolnik =Streugolnik(8,4);
         System.out.println("Площадь треугольника равна: " + resultStreugolnik);
     }
 
