@@ -1,4 +1,4 @@
-package lesson8;
+package hw8;
 
 class Animal {
     private String name;

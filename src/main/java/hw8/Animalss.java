@@ -1,4 +1,4 @@
-package lesson8;
+package hw8;
 
 public class Animalss {
     public static void main(String[] args) {

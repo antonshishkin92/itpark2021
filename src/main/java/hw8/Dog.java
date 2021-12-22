@@ -1,4 +1,4 @@
-package lesson8;
+package hw8;
 
 public class Dog extends Animal{
     public Dog(String name,String voice){
