@@ -12,9 +12,14 @@ public class CarRunner {
         car.new Engine(1.6);
 //      new.car Engine(1.6);
 
-        Object carClone=car.clone();
-        System.out.println(car);
-        System.out.println(carClone);
+        try {
+            Object carClone=car.clone();
+            System.out.println(car);
+            System.out.println(carClone);
+        }catch (CloneNotSupportedException e){
+            System.out.println("Клонирование для объекта класса car не поддерживается");
+        }
+
     }
 
 }
