@@ -3,20 +3,23 @@ package hw14;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class Contract {
+public class Contact {
     private final String name;
     private final String surname;
     private final String patronymic;
     private final String phone;
-    private Collection<Contract> LinkedContracts;
+    private Collection<Contact> LinkedContacts;
 
-    public Contract(String name, String surname, String patronymic, String phone) {
+    public Contact(String name, String surname, String patronymic, String phone) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.phone = phone;
-        this.LinkedContracts=new HashSet<>();
+        this.LinkedContacts = new HashSet<>();
+    }
 
+    public Contact(){
+        this(NameUtils.randomizeName(),NameUtils.randomizeSurname(),NameUtils.randomizePatronymic(),PhoneUtils.generatePhone());
     }
 
     public String getName() {
@@ -35,13 +38,13 @@ public class Contract {
         return phone;
     }
 
-    public Collection<Contract> getLinkedContracts() {
-        return LinkedContracts;
+    public Collection<Contact> getLinkedContacts() {
+        return LinkedContacts;
     }
 
     @Override
     public String toString() {
-        return "Contract{" +
+        return "Contact{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
