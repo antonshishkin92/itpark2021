@@ -39,7 +39,7 @@ public class ContactRunner {
                 .ifPresent(System.out::println);
 
 
-        (Collection < ContactWithOthers > contactsList) {
+        private static void fillLinkedContacts(Collection < ContactWithOthers > contactsList) {
             long now = System.currentTimeMillis();
             for (ContactWithOthers contact : contactsList) {
                 IntStream.range(0, LIMIT_OF_LINKED_CONTACTS).boxed()
@@ -50,6 +50,7 @@ public class ContactRunner {
                     contactsList instanceof List ? "списка" : "множества",
                     LIMIT_OF_LINKED_CONTACTS, spentTime / 1000d);
         }
+
 
 
     }
