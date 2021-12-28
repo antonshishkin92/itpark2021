@@ -1,5 +1,8 @@
-package hw14;
+package hw14.contact;
 
+
+import hw14.util.NameUtils;
+import hw14.util.PhoneUtils;
 
 public class Contact {
     private final String name;
@@ -20,7 +23,7 @@ public class Contact {
     }
 
     public Contact(){
-        this(NameUtils.randomizeName(),NameUtils.randomizeSurname(),NameUtils.randomizePatronymic(),PhoneUtils.generatePhone());
+        this(NameUtils.randomizeName(),NameUtils.randomizeSurname(),NameUtils.randomizePatronymic(), PhoneUtils.generatePhone());
     }
 
     public String getName() {

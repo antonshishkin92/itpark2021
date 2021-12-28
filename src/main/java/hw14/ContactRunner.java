@@ -1,7 +1,9 @@
 package hw14;
 
+import hw14.contact.Contact;
+import hw14.contact.ContactWithOthers;
+
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -9,11 +11,11 @@ import java.util.stream.IntStream;
 
 public class ContactRunner {
 
-    private static final Integer LIMIT = 1_000;
+    private static final Integer LIMIT = 10_000;
     private static final Integer LIMIT_OF_LINKED_CONTACTS = 100;
 
     public static void main(String[] args) {
-//        long seconds = TimeUnit.SECONDS.convert(System.currentTimeMillis()-now,TimeUnit.MILLISECONDS);
+
         ContactWithOthers[] contacts = generateElementsInArrayAndMeasureTime(ContactRunner::fillContactArrays);
         Collection<ContactWithOthers> contactsList = generateElementsAndMeasureTime(ContactRunner::fillContactList);
         Collection<ContactWithOthers> contactsSet = generateElementsAndMeasureTime(ContactRunner::fillContactSet);
@@ -37,21 +39,18 @@ public class ContactRunner {
         mapOfContacts.entrySet().stream()
                 .max(Comparator.comparing(Map.Entry::getValue))
                 .ifPresent(System.out::println);
+    }
 
-
-        private static void fillLinkedContacts(Collection<ContactWithOthers> contactsList) {
-            long now = System.currentTimeMillis();
-            for (ContactWithOthers contact : contactsList) {
-                IntStream.range(0, LIMIT_OF_LINKED_CONTACTS).boxed()
-                        .map(i -> randomElement(contactsList)).forEach(contact.getLinkedContacts()::add);
-            }
-            long spentTime = System.currentTimeMillis() - now;
-            System.out.printf("Заполнение связанных контактов %s из %d элементов потребовало %.2f секунд\n",
-                    contactsList instanceof List ? "списка" : "множества",
-                    LIMIT_OF_LINKED_CONTACTS, spentTime / 1000d);
+    private static void fillLinkedContacts(Collection<ContactWithOthers> contactsList) {
+        long now = System.currentTimeMillis();
+        for (ContactWithOthers contact : contactsList) {
+            IntStream.range(0, LIMIT_OF_LINKED_CONTACTS).boxed()
+                    .map(i -> randomElement(contactsList)).forEach(contact.getLinkedContacts()::add);
         }
-
-
+        long spentTime = System.currentTimeMillis() - now;
+        System.out.printf("Заполнение связанных контактов %s из %d элементов потребовало %.2f секунд\n",
+                contactsList instanceof List ? "списка" : "множества",
+                LIMIT_OF_LINKED_CONTACTS, spentTime / 1000d);
     }
 
     public static ContactWithOthers[] generateElementsInArrayAndMeasureTime(Supplier<ContactWithOthers[]> supplier) {

@@ -1,4 +1,4 @@
-package hw14;
+package hw14.contact;
 
 import java.util.Collection;
 import java.util.HashSet;

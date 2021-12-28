@@ -1,4 +1,4 @@
-package hw14;
+package hw14.util;
 
 import java.util.List;
 import java.util.Random;
