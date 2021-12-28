@@ -2,60 +2,108 @@ package hw14;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ContactRunner {
 
-    private static final Integer LIMIT = 100_000;
+    private static final Integer LIMIT = 1_000;
     private static final Integer LIMIT_OF_LINKED_CONTACTS = 100;
 
     public static void main(String[] args) {
 //        long seconds = TimeUnit.SECONDS.convert(System.currentTimeMillis()-now,TimeUnit.MILLISECONDS);
-       Contact[] contacts = generateElementsInArrayAndMeasureTime(ContactRunner::fillContactArrays);
-        Collection<Contact> contactList = generateElementsAndMeasureTime(ContactRunner::fillContactList);
-        Collection<Contact> contactSet = generateElementsAndMeasureTime(ContactRunner::fillContactSet);
+        ContactWithOthers[] contacts = generateElementsInArrayAndMeasureTime(ContactRunner::fillContactArrays);
+        Collection<ContactWithOthers> contactsList = generateElementsAndMeasureTime(ContactRunner::fillContactList);
+        Collection<ContactWithOthers> contactsSet = generateElementsAndMeasureTime(ContactRunner::fillContactSet);
+
+        System.out.println("-------------");
+        fillLinkedContacts(contactsList);
+        System.out.println("-------------");
+        fillLinkedContacts(contactsSet);
+
+        System.out.println("-------------");
+        Map<Contact, Collection<Contact>> mapOfContactsWithLinkedContacts =
+                contactsList.stream().collect(Collectors.toMap(Contact::new, ContactWithOthers::getLinkedContacts));
+        System.out.println(mapOfContactsWithLinkedContacts);
+
+        Map<Contact, Integer> mapOfContacts = contactsList.stream().map(ContactWithOthers::getLinkedContacts)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toMap(Function.identity(), contact -> 1, Integer::sum));
+        System.out.println("-------------");
+        System.out.println(contactsList);
+        System.out.println("-------------");
+        mapOfContacts.entrySet().stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .ifPresent(System.out::println);
+
+
+        (Collection < ContactWithOthers > contactsList) {
+            long now = System.currentTimeMillis();
+            for (ContactWithOthers contact : contactsList) {
+                IntStream.range(0, LIMIT_OF_LINKED_CONTACTS).boxed()
+                        .map(i -> randomElement(contactsList)).forEach(contact.getLinkedContacts()::add);
+            }
+            long spentTime = System.currentTimeMillis() - now;
+            System.out.printf("Заполнение связанных контактов %s из %d элементов потребовало %.2f секунд\n",
+                    contactsList instanceof List ? "списка" : "множества",
+                    LIMIT_OF_LINKED_CONTACTS, spentTime / 1000d);
+        }
+
 
     }
 
-    public static Contact[] generateElementsInArrayAndMeasureTime(Supplier<Contact[]> supplier){
-        Long now =System.currentTimeMillis();
-        Contact[] collection=supplier.get();
-        long spentTime=System.currentTimeMillis()-now;
-        System.out.printf("Заполнение массива из %d элементов потребовало %.2f секунд\n",collection.length, spentTime / 1000d);
+    public static ContactWithOthers[] generateElementsInArrayAndMeasureTime(Supplier<ContactWithOthers[]> supplier) {
+        long now = System.currentTimeMillis();
+        ContactWithOthers[] collection = supplier.get();
+        long spentTime = System.currentTimeMillis() - now;
+        System.out.printf("Заполнение массива из %d элементов потребовало %.2f секунд\n", collection.length, spentTime / 1000d);
         return collection;
     }
 
 
-    public static Collection<Contact> generateElementsAndMeasureTime(Supplier<Collection<Contact>> supplier){
-        Long now =System.currentTimeMillis();
-        Collection<Contact> collection=supplier.get();
-        long spentTime=System.currentTimeMillis()-now;
+    public static Collection<ContactWithOthers> generateElementsAndMeasureTime(Supplier<Collection<ContactWithOthers>> supplier) {
+        long now = System.currentTimeMillis();
+        Collection<ContactWithOthers> collection = supplier.get();
+        long spentTime = System.currentTimeMillis() - now;
         System.out.printf("Заполнение %s из %d элементов потребовало %.2f секунд\n",
                 collection instanceof List ? "списка" : "множества",
                 collection.size(), spentTime / 1000d);
         return collection;
     }
 
-    private static Contact[] fillContactArrays() {
-        Contact[] contacts = new Contact[LIMIT];
+    private static ContactWithOthers[] fillContactArrays() {
+        ContactWithOthers[] contacts = new ContactWithOthers[LIMIT];
         for (int i = 0; i < contacts.length; i++) {
-            contacts[i] = new Contact();
+            contacts[i] = new ContactWithOthers();
         }
         return contacts;
     }
 
-    private static List<Contact> fillContactList() {
-        List<Contact> contacts = new ArrayList<>(LIMIT);
-        IntStream.range(0, LIMIT).forEach(value -> contacts.add(new Contact()));
+    private static List<ContactWithOthers> fillContactList() {
+        List<ContactWithOthers> contacts = new ArrayList<>(LIMIT);
+        IntStream.range(0, LIMIT).forEach(value -> contacts.add(new ContactWithOthers()));
 
         return contacts;
     }
 
-    private static Set<Contact> fillContactSet() {
-        Set<Contact> contacts = new HashSet<>(LIMIT);
-        IntStream.range(0, LIMIT).forEach(value -> contacts.add(new Contact()));
+    private static Set<ContactWithOthers> fillContactSet() {
+        Set<ContactWithOthers> contacts = new HashSet<>(LIMIT);
+        IntStream.range(0, LIMIT).forEach(value -> contacts.add(new ContactWithOthers()));
 
         return contacts;
+    }
+
+    private static Contact randomElement(Collection<ContactWithOthers> collection) {
+        int counter = 0;
+        int randomCounter = new Random().nextInt(collection.size());
+        for (Contact contact : collection) {
+            if (counter++ == randomCounter) {
+                return contact;
+            }
+        }
+        throw new IllegalStateException("Мы сюда зайти не должны");
     }
 }
+
