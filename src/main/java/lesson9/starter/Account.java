@@ -1,4 +1,4 @@
-package lesson9;
+package lesson9.starter;
 
 public abstract class Account {
     private double balance;

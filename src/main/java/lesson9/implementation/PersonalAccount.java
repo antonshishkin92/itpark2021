@@ -1,6 +1,6 @@
 package lesson9.implementation;
 
-import lesson9.Account;
+import lesson9.starter.Account;
 
 public class PersonalAccount extends Account {
 

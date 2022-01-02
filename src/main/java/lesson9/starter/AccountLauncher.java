@@ -1,4 +1,4 @@
-package lesson9;
+package lesson9.starter;
 
 
 import lesson9.implementation.CompanyAccount;

@@ -1,7 +1,7 @@
 package lesson9.implementation;
 
-import lesson9.Account;
-import lesson9.Course;
+import lesson9.starter.Account;
+
 import static lesson9.Course.Current_value;
 
 public class CompanyAccount extends Account {
