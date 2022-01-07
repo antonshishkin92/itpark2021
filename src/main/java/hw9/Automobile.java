@@ -45,6 +45,7 @@ public abstract class Automobile {
     public void setTankCapacity(double tankCapacity) {
         this.tankCapacity = tankCapacity;
     }
+
     public double getDistanceWithoutRefueling(){
         double distanceWithoutRefueling =(100/fuelConsumption)*tankCapacity;
         return distanceWithoutRefueling;
