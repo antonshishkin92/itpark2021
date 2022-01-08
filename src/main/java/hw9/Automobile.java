@@ -1,5 +1,7 @@
 package hw9;
 
+import java.text.DecimalFormat;
+
 public abstract class Automobile {
 
     public String brand;
@@ -48,6 +50,9 @@ public abstract class Automobile {
 
     public double getDistanceWithoutRefueling(){
         double distanceWithoutRefueling =(100/fuelConsumption)*tankCapacity;
+        DecimalFormat decimalFormat=new DecimalFormat("#.##");
+        String result =decimalFormat.format(distanceWithoutRefueling);
+        System.out.println(result);
         return distanceWithoutRefueling;
     }
 
