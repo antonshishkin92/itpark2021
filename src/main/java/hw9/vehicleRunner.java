@@ -30,6 +30,30 @@ public class vehicleRunner {
         System.out.println(toyotaCorolla);
         System.out.println(toyotaCamry);
         System.out.println("-------------------------");
+        Truck sadkoNext = new Truck("Садко", "Некст", 21.5, 90);
+        Truck manTGL = new Truck("Man", "TGL", 200, 19.4);
+        Truck manTGA = new Truck("Man", "TGA", 260, 25);
+        Truck volksagenCrafter = new Truck("Volkswagen", "Crafter", 16.7, 95);
+        Truck ivecoEurocargo = new Truck("Iveco", "Eurocargo", 17.4, 245);
+        Truck ivecoDaily = new Truck("Iveco", "Daily", 14.9, 95);
+        Truck fordCargo = new Truck("Ford", "Cargo", 16.6, 190);
+        Truck volvoFL = new Truck("Volvo", "FL", 18.1, 285);
+        Truck volvoFH = new Truck("Volvo", "FH", 14.4, 230);
+        Truck isuzuELF = new Truck("Isuzu", "ELF", 17.5, 150);
+        Truck isuzuForward = new Truck("Isuzu", "Forward", 24.1, 140);
+        Truck uazCargo = new Truck("УАЗ", "Карго", 14, 90);
+        System.out.println(sadkoNext);
+        System.out.println(manTGA);
+        System.out.println(manTGL);
+        System.out.println(volksagenCrafter);
+        System.out.println(ivecoEurocargo);
+        System.out.println(ivecoDaily);
+        System.out.println(fordCargo);
+        System.out.println(volvoFL);
+        System.out.println(volvoFH);
+        System.out.println(isuzuELF);
+        System.out.println(isuzuForward);
+        System.out.println(uazCargo);
 
     }
 }
