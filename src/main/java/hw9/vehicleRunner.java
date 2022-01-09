@@ -21,7 +21,6 @@ public class vehicleRunner {
         System.out.println(opelCorsa);
         System.out.println(kiaRio);
         System.out.println(nissanJuke);
-        System.out.println(nissanJuke);
         System.out.println(skodaFabia);
         System.out.println(fordKuga);
         System.out.println(fiatDucato);
@@ -31,8 +30,8 @@ public class vehicleRunner {
         System.out.println(toyotaCamry);
         System.out.println("-------------------------");
         Truck sadkoNext = new Truck("Садко", "Некст", 21.5, 90);
-        Truck manTGL = new Truck("Man", "TGL", 200, 19.4);
-        Truck manTGA = new Truck("Man", "TGA", 260, 25);
+        Truck manTGL = new Truck("Man", "TGL", 19.4, 240);
+        Truck manTGA = new Truck("Man", "TGA", 25, 260);
         Truck volksagenCrafter = new Truck("Volkswagen", "Crafter", 16.7, 95);
         Truck ivecoEurocargo = new Truck("Iveco", "Eurocargo", 17.4, 245);
         Truck ivecoDaily = new Truck("Iveco", "Daily", 14.9, 95);
@@ -54,6 +53,7 @@ public class vehicleRunner {
         System.out.println(isuzuELF);
         System.out.println(isuzuForward);
         System.out.println(uazCargo);
+
 
     }
 }

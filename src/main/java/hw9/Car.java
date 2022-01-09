@@ -7,4 +7,5 @@ public class Car extends Automobile {
         super(brand, model, fuelConsumption, tankCapacity, 0.0);
     }
 
+
 }
