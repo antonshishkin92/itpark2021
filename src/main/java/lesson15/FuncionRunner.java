@@ -1,6 +1,9 @@
 package lesson15;
 
-import java.util.function.Function;
+import lesson15.dto.Account;
+
+import java.util.Random;
+import java.util.function.*;
 
 public class FuncionRunner {
 
@@ -14,6 +17,12 @@ public class FuncionRunner {
         Comparable<String> comparable = str->value.compareTo(str);
         System.out.println(summa("123","325",str2Int,comparable));
         System.out.println(summa("1235","32547",str2Int,comparable));
+
+Function<Account,Integer> account2Int=account->account.hashCode();
+        Predicate<Account>activaAccountPredicate=account ->account.getBalance()>0;
+        Consumer<Account>printAccount=account -> System.out.println(account);
+        BiFunction<String,String,String>concatStrings=(str1,str2)->str1+str2;
+        Supplier<Integer>generatorInts=()->new Random().nextInt();
 
     }
 
