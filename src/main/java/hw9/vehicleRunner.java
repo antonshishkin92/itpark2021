@@ -1,5 +1,7 @@
 package hw9;
 
+import java.util.Arrays;
+
 public class vehicleRunner {
     public static void main(String[] args) {
         Car hyundaiAccent = new Car("Hyundai", "Accent", 9.9, 45);
@@ -15,20 +17,6 @@ public class vehicleRunner {
         Car kiaCeed = new Car("Kia", "Ceed", 9.8, 55);
         Car toyotaCorolla = new Car("Toyota", "Corolla", 8.2, 50);
         Car toyotaCamry = new Car("Toyota", "Camry", 10.1, 70);
-        System.out.println(hyundaiAccent);
-        System.out.println(daewooMatiz);
-        System.out.println(chevroletAveo);
-        System.out.println(opelCorsa);
-        System.out.println(kiaRio);
-        System.out.println(nissanJuke);
-        System.out.println(skodaFabia);
-        System.out.println(fordKuga);
-        System.out.println(fiatDucato);
-        System.out.println(chevroletNiva);
-        System.out.println(kiaCeed);
-        System.out.println(toyotaCorolla);
-        System.out.println(toyotaCamry);
-        System.out.println("-------------------------");
         Truck sadkoNext = new Truck("Садко", "Некст", 21.5, 90);
         Truck manTGL = new Truck("Man", "TGL", 19.4, 240);
         Truck manTGA = new Truck("Man", "TGA", 25, 260);
@@ -41,20 +29,13 @@ public class vehicleRunner {
         Truck isuzuELF = new Truck("Isuzu", "ELF", 17.5, 150);
         Truck isuzuForward = new Truck("Isuzu", "Forward", 24.1, 140);
         Truck uazCargo = new Truck("УАЗ", "Карго", 14, 90);
-        System.out.println(sadkoNext);
-        System.out.println(manTGA);
-        System.out.println(manTGL);
-        System.out.println(volksagenCrafter);
-        System.out.println(ivecoEurocargo);
-        System.out.println(ivecoDaily);
-        System.out.println(fordCargo);
-        System.out.println(volvoFL);
-        System.out.println(volvoFH);
-        System.out.println(isuzuELF);
-        System.out.println(isuzuForward);
-        System.out.println(uazCargo);
-        System.out.println("----------------------");
 
+        Car[]arrayCars=new Car[]{hyundaiAccent,daewooMatiz,chevroletAveo,opelCorsa,kiaRio,kiaCeed,nissanJuke,
+        skodaFabia,fordKuga,chevroletNiva,kiaCeed,fiatDucato,toyotaCamry,toyotaCorolla};
+        System.out.println(Arrays.toString(arrayCars));
 
+Truck[] arrayTrucks= new Truck[]{sadkoNext, manTGA,manTGL, volksagenCrafter, ivecoEurocargo,ivecoDaily,fordCargo,
+        volvoFL,volvoFH,isuzuELF,isuzuForward,uazCargo};
+        System.out.println(Arrays.toString(arrayTrucks));
     }
 }

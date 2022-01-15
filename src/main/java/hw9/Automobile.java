@@ -19,9 +19,6 @@ public abstract class Automobile {
 
     public double distanceWithoutRefueling() {
         double distanceWithoutRefueling = (100 / fuelConsumption) * tankCapacity;
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String result = decimalFormat.format(distanceWithoutRefueling);
-        System.out.println(result);
         return distanceWithoutRefueling;
     }
 
