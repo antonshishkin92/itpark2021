@@ -53,7 +53,7 @@ public class vehicleRunner {
         System.out.println(isuzuELF);
         System.out.println(isuzuForward);
         System.out.println(uazCargo);
-
+        System.out.println("----------------------");
 
     }
 }
