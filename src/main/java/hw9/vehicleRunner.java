@@ -15,7 +15,7 @@ public class vehicleRunner {
         Car fiatDucato = new Car("Fiat", "Ducato", 12.6, 80);
         Car chevroletNiva = new Car("Chevrolet", "Niva", 17.7, 60);
         Car kiaCeed = new Car("Kia", "Ceed", 9.8, 55);
-        Car toyotaCorolla = new Car("Toyota", "Corolla", 8.2, 50);
+        Car toyotaCorolla = new Car("Toyota", "Corolla", 12.4, 50);
         Car toyotaCamry = new Car("Toyota", "Camry", 10.1, 70);
         Truck sadkoNext = new Truck("Садко", "Некст", 21.5, 90);
         Truck manTGL = new Truck("Man", "TGL", 19.4, 240);
@@ -30,14 +30,41 @@ public class vehicleRunner {
         Truck isuzuForward = new Truck("Isuzu", "Forward", 24.1, 140);
         Truck uazCargo = new Truck("УАЗ", "Карго", 14, 90);
 
-        Car[]arrayCars=new Car[]{hyundaiAccent,daewooMatiz,chevroletAveo,opelCorsa,kiaRio,kiaCeed,nissanJuke,
-        skodaFabia,fordKuga,chevroletNiva,kiaCeed,fiatDucato,toyotaCamry,toyotaCorolla};
+        Car[] arrayCars = new Car[]{hyundaiAccent, daewooMatiz, chevroletAveo, opelCorsa, kiaRio, kiaCeed, nissanJuke,
+                skodaFabia, fordKuga, chevroletNiva, kiaCeed, fiatDucato, toyotaCamry, toyotaCorolla};
         System.out.println(Arrays.toString(arrayCars));
 
-Truck[] arrayTrucks= new Truck[]{sadkoNext, manTGA,manTGL, volksagenCrafter, ivecoEurocargo,ivecoDaily,fordCargo,
-        volvoFL,volvoFH,isuzuELF,isuzuForward,uazCargo};
+        Truck[] arrayTrucks = new Truck[]{sadkoNext, manTGA, manTGL, volksagenCrafter, ivecoEurocargo, ivecoDaily, fordCargo,
+                volvoFL, volvoFH, isuzuELF, isuzuForward, uazCargo};
         System.out.println(Arrays.toString(arrayTrucks));
 
         hyundaiAccent.moveCar();
+        daewooMatiz.moveCar();
+        chevroletAveo.moveCar();
+        opelCorsa.moveCar();
+        kiaRio.moveCar();
+        kiaCeed.moveCar();
+        nissanJuke.moveCar();
+        skodaFabia.moveCar();
+        fordKuga.moveCar();
+        chevroletNiva.moveCar();
+        kiaCeed.moveCar();
+        fiatDucato.moveCar();
+        toyotaCamry.moveCar();
+        toyotaCorolla.moveCar();
+        System.out.println("------------");
+        sadkoNext.moveTruck();
+        manTGA.moveTruck();
+        manTGL.moveTruck();
+        volksagenCrafter.moveTruck();
+        ivecoEurocargo.moveTruck();
+        ivecoDaily.moveTruck();
+        fordCargo.moveTruck();
+        volvoFL.moveTruck();
+        volvoFH.moveTruck();
+        isuzuELF.moveTruck();
+        isuzuForward.moveTruck();
+        uazCargo.moveTruck();
+        System.out.println("----------------------");
     }
 }
