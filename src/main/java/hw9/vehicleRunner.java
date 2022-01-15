@@ -37,5 +37,7 @@ public class vehicleRunner {
 Truck[] arrayTrucks= new Truck[]{sadkoNext, manTGA,manTGL, volksagenCrafter, ivecoEurocargo,ivecoDaily,fordCargo,
         volvoFL,volvoFH,isuzuELF,isuzuForward,uazCargo};
         System.out.println(Arrays.toString(arrayTrucks));
+
+        hyundaiAccent.moveCar();
     }
 }
