@@ -55,5 +55,6 @@ public class vehicleRunner {
         System.out.println(uazCargo);
         System.out.println("----------------------");
 
+
     }
 }
