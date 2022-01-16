@@ -66,5 +66,21 @@ public class vehicleRunner {
         isuzuForward.moveTruck();
         uazCargo.moveTruck();
         System.out.println("----------------------");
+        Automobile[] vehicleArrays = new Automobile[]{
+                toyotaCorolla, fiatDucato, isuzuForward, volvoFH, volvoFL, volksagenCrafter, ivecoDaily, chevroletAveo,
+                daewooMatiz, skodaFabia
+        };
+        toyotaCorolla.MoveVehicle();
+                fiatDucato.MoveVehicle();
+                isuzuForward.MoveVehicle();
+                volvoFH.MoveVehicle();
+                volvoFL.MoveVehicle();
+                volksagenCrafter.MoveVehicle();
+                ivecoDaily.MoveVehicle();
+                chevroletAveo.MoveVehicle();
+                daewooMatiz.MoveVehicle();
+                skodaFabia.MoveVehicle();
+        System.out.println(Arrays.toString(vehicleArrays));
     }
 }
+
