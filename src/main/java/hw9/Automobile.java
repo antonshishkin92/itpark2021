@@ -16,15 +16,15 @@ public abstract class Automobile {
         this.tankCapacity = tankCapacity;
     }
 
-/** distanceWithoutRefueling - дистанция без дозаправки(в километрах).
- * fuelConsumption - расход топлива(литр на 100 км).
- * tankCapacity - объём бака автомобиля(в литрах).
-  */
+    /**
+     * distanceWithoutRefueling - дистанция без дозаправки(в километрах).
+     * fuelConsumption - расход топлива(литр на 100 км).
+     * tankCapacity - объём бака автомобиля(в литрах).
+     */
     public double distanceWithoutRefueling() {
         double distanceWithoutRefueling = (100 / fuelConsumption) * tankCapacity;
         return distanceWithoutRefueling;
     }
-
 
 
     @Override
