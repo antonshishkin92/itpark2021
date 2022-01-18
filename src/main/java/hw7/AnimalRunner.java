@@ -1,4 +1,4 @@
-package lesson7;
+package hw7;
 
 public class AnimalRunner {
 
