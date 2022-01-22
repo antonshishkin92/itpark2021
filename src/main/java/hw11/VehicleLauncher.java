@@ -9,7 +9,7 @@ public class VehicleLauncher {
         Car opelCorsa = new Car("легковая ", "Opel Corsa", " A5538NZC", 112, 2.3, 2.2, 2.2);
         Car kiaRio = new Car("легковая ", " Kia Rio", " F747LK", 89, 3.4, 1.5, 2.1);
         Car nissanJuke = new Car("легковая ", "Nissan Juke", " K91823QN", 104, 2.6, 1.9, 1.8);
-        Car skodaFabia = new Car("легковой ", "Skoda Fabia", " HY2640JD", 75, 3.1, 2.6, 2.7);
+        Car skodaFabia = new Car("легковая ", "Skoda Fabia", " HY2640JD", 75, 3.1, 2.6, 2.7);
         Car toyotaCorolla = new Car("легковая ", "Toyota Corolla", " ZF126Pi", 78, 2.7, 1.8, 1.9);
         Car chevroletNiva = new Car("легковая ", "Chevrolet Niva", " GD8549yU", 72, 2.8, 2.2, 2.7);
         Truck vwCrafter = new Truck("грузовая ", "Volkswagen Crafter", " MU4108IH", 97, 5.1, 3.2, 2.6);
