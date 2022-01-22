@@ -23,7 +23,7 @@ public class Checkpoint {
     public void check() {
 
         if (height < 4 & width < 2.5 & weight < 8) {
-            System.out.println("Всё в порядке.Можно ехать");
+            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП");
         } else {
             System.out.println("Проезд запрещён. Вес < 8 (т), ширина < 2.5 (м), высота < 4 (м) " + type + nameVehicle + numberVehicle);
         }
@@ -32,29 +32,29 @@ public class Checkpoint {
     public void check2() {
 
         if (height < 3 & width < 2 & weight < 3.5) {
-            System.out.println("Всё в порядке.Можно ехать");
+            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП №2");
         } else {
-            System.out.println("Проезд запрещён. Вес < 3.5 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println("Проезд запрещён через КПП №2. Вес < 3.5 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
         }
     }
 
     public void check3() {
 
         if (height < 2.5 & width < 2 & weight < 4) {
-            System.out.println("Всё в порядке.Можно ехать");
+            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП №3");
         } else {
-            System.out.println("Проезд запрещён. Вес < 4 (т), ширина < 2 (м), высота < 2.5 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println("Проезд запрещён через КПП №3. Вес < 4 (т), ширина < 2 (м), высота < 2.5 (м) " + type + nameVehicle + numberVehicle);
         }
     }
 
     public void speedCheck() {
         if (speed > 80 & speed < 100) {
-            System.out.println("Превышение скорости 80 км/ч. Требую снизить скорость.Водитель " + nameVehicle +
+            System.out.println("Превышение скорости 80 км/ч. Требую снизить скорость.Водитель " + nameVehicle + " с госномером" +
                     numberVehicle + " ваша скорость " + speed + "км/ч");
         } else if (speed > 100) {
-            System.out.println("Привлекаю полицию, для задержания нарушителя " + nameVehicle + numberVehicle);
+            System.out.println("Привлекаю полицию, для задержания нарушителя " + nameVehicle + " с госномером " + numberVehicle);
         } else if (speed < 80) {
-            System.out.println(nameVehicle + " с госномером " + numberVehicle + "скорость не превысил");
+            System.out.println(nameVehicle + " с госномером " + numberVehicle + " скорость не превысил");
         }
     }
 }
