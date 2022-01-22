@@ -22,15 +22,39 @@ public class Checkpoint {
 
     public void check() {
 
-        if (100 > speed & speed > 80) {
-            System.out.println("Превышение скорости при ограничении 80 км/ч");
-        } else if (height < 4 & width < 2.5 & weight < 8) {
-            System.out.println();
-
-        } else System.out.println("Превышение допустимой скорости. Вызываю полицию.Нарушитель пойман.Транспорт нарушителя: " + type + nameVehicle + numberVehicle);
-
+        if (height < 4 & width < 2.5 & weight < 8) {
+            System.out.println("Всё в порядке.Можно ехать");
+        } else {
+            System.out.println("Проезд запрещён. Вес < 8 (т), ширина < 2.5 (м), высота < 4 (м) " + type + nameVehicle + numberVehicle);
+        }
     }
 
+    public void check2() {
 
+        if (height < 3 & width < 2 & weight < 7) {
+            System.out.println("Всё в порядке.Можно ехать");
+        } else {
+            System.out.println("Проезд запрещён. Вес < 7 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
+        }
+    }
+
+    public void check3() {
+
+        if (height < 2.5 & width < 2 & weight < 4) {
+            System.out.println("Всё в порядке.Можно ехать");
+        } else {
+            System.out.println("Проезд запрещён. Вес < 4 (т), ширина < 2 (м), высота < 2.5 (м) " + type + nameVehicle + numberVehicle);
+        }
+    }
+
+    public void speedCheck() {
+        if (speed > 80 & speed < 100) {
+            System.out.println("Превышение скорости 80 км/ч. Требую снизить скорость.Водитель " + nameVehicle +
+                    numberVehicle + " ваша скорость " + speed + "км/ч");
+        } else if (speed > 100) {
+            System.out.println("Привлекаю полицию, для задержания нарушителя " + nameVehicle + numberVehicle);
+        } else if (speed < 80) {
+            System.out.println(nameVehicle + " с госномером " + numberVehicle + "скорость не превысил");
+        }
+    }
 }
-
