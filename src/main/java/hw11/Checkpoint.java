@@ -31,10 +31,10 @@ public class Checkpoint {
 
     public void check2() {
 
-        if (height < 3 & width < 2 & weight < 7) {
+        if (height < 3 & width < 2 & weight < 3.5) {
             System.out.println("Всё в порядке.Можно ехать");
         } else {
-            System.out.println("Проезд запрещён. Вес < 7 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println("Проезд запрещён. Вес < 3.5 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
         }
     }
 
