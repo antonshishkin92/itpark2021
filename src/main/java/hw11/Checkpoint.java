@@ -23,27 +23,27 @@ public class Checkpoint {
     public void check() {
 
         if (height < 4 & width < 2.5 & weight < 8) {
-            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП");
+            System.out.println("Машина " + nameVehicle + " госномер" + numberVehicle + " Всё в порядке.Можно ехать с КПП №1");
         } else {
-            System.out.println("Проезд запрещён. Вес < 8 (т), ширина < 2.5 (м), высота < 4 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println(type + nameVehicle + numberVehicle + "Проезд запрещён. Вес < 8 (т), ширина < 2.5 (м), высота < 4 (м) ");
         }
     }
 
     public void check2() {
 
         if (height < 3 & width < 2 & weight < 3.5) {
-            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП №2");
+            System.out.println("машина " + nameVehicle + "госномер " + numberVehicle + " Всё в порядке.Можно ехать с КПП №2");
         } else {
-            System.out.println("Проезд запрещён через КПП №2. Вес < 3.5 (т), ширина < 2 (м), высота < 3 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println(type + "машина " + nameVehicle + numberVehicle + "Проезд запрещён через КПП №2. Вес < 3.5 (т), ширина < 2 (м), высота < 3 (м)");
         }
     }
 
     public void check3() {
 
         if (height < 2.5 & width < 2 & weight < 4) {
-            System.out.println(nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП №3");
+            System.out.println("машина " + nameVehicle + numberVehicle + " Всё в порядке.Можно ехать с КПП №3");
         } else {
-            System.out.println("Проезд запрещён через КПП №3. Вес < 4 (т), ширина < 2 (м), высота < 2.5 (м) " + type + nameVehicle + numberVehicle);
+            System.out.println(type + nameVehicle + numberVehicle + " Проезд запрещён через КПП №3. Вес < 4 (т), ширина < 2 (м), высота < 2.5 (м)");
         }
     }
 
