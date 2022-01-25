@@ -8,11 +8,19 @@ public class VehicleTest {
 
     @Test
     public void shouldVehicleCanDistanceWithoutRefueling(){
-        Auto hyundaiAccent=new Auto("Hyundai Accent","Accent",9.9,45,0);
-        Assert.assertEquals(454.54,hyundaiAccent.distanceWithoutRefueling(),hyundaiAccent.distanceWithoutRefueling());
+        Auto hyundaiAccent=new Auto("Hyundai","Accent",9.9,45,0);
+        Assert.assertEquals(454.0,hyundaiAccent.distanceWithoutRefueling(),1.0);
 
-        Auto manTGA=new Auto("Man","TGA",25,260,0);
-        Assert.assertEquals(1040,manTGA.distanceWithoutRefueling(), manTGA.getDistanceWithoutRefueling());
+        Auto kiaCeed = new Auto("Kia","Ceed",9.8,55,0);
+        Assert.assertEquals(561.0,kiaCeed.distanceWithoutRefueling(),0.5);
+
+        Auto manTGA=new Auto("Man","TGA",24.7,260,0);
+        Assert.assertEquals(1052,manTGA.distanceWithoutRefueling(), 1.0);
+
+        Auto volvoFH = new Auto(" Volvo", "FH", 14.4, 230,0);
+        Assert.assertEquals(1597.0,volvoFH.distanceWithoutRefueling(),0.3);
+
     }
+
 
 }
