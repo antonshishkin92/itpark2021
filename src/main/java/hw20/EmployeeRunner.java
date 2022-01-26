@@ -7,6 +7,8 @@ import hw20.dto.Position;
 import jakarta.xml.bind.JAXB;
 import lombok.SneakyThrows;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -53,7 +55,9 @@ public class EmployeeRunner {
         System.out.printf("маршалинг данных в файл %s\n", path.getFileName());
         JAXB.marshal(employees, path.toFile());
         Document document = getDocument(path.toFile());
+        Integer averageSalary=getAverageSalary(document);
         System.out.printf("Осуществляем поиск сотрудников с заработной платой, выше средней %d\n", getAverageSalary(document));
+        List<String> employeeList=searchEmployeesWithMoreAverageSalary(document,averageSalary);
     }
 
     private static Employee getEmployee(String fullName) {
@@ -65,16 +69,23 @@ public class EmployeeRunner {
     }
 
     @SneakyThrows
-    private static List<Employee> searchEmployeesWithMoreAverageSalary(Document doc) {
+    private static List<String> searchEmployeesWithMoreAverageSalary(Document doc,int salary) {
         XPathFactory xPathFactory = XPathFactory.newInstance();
-        NodeList nodeList = (NodeList) xPathFactory.newXPath().compile("//employee/position/salary").evaluate(doc, XPathConstants.NODESET);
+        NodeList nodeList = (NodeList) xPathFactory.newXPath().compile("//employee/position[@salary>" + salary +"]/ancestor::employee").evaluate(doc, XPathConstants.NODESET);
+        for (int i=0; i<nodeList.getLength();i++){
+           Node item = nodeList.item(i);
+           if (item.getNodeType()==Node.ELEMENT_NODE && "employee".equals(((Element)item).getTagName())){
+               System.out.println(((Element)item).getTextContent());
+           }
+        }
+
         return Collections.emptyList();
     }
 
     @SneakyThrows
     private static Integer getAverageSalary(Document doc) {
         XPathFactory xPathFactory = XPathFactory.newInstance();
-        Double result = (Double) xPathFactory.newXPath().compile("sum(//salary) div count(//salary) ").evaluate(doc, XPathConstants.NUMBER);
+        Double result = (Double) xPathFactory.newXPath().compile("sum(//position/@salary) div count(//position)").evaluate(doc, XPathConstants.NUMBER);
 return result !=null ? result.intValue() : 0;
     }
 
