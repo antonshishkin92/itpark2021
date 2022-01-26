@@ -11,10 +11,10 @@ public class URIRunner {
     public static void main(String[] args) throws URISyntaxException, IOException {
         URI uri = new URI();
         System.out.println("Протокол:" + uri.getScheme());
-        System.out.println("Хост " + uri.getHost());
-        System.out.println("Порт " + uri.getPort());
-        System.out.println("Путь " + uri.getPath());
-        System.out.println("Параметры " + uri.getRawQuery());
+        System.out.println("Хост: " + uri.getHost());
+        System.out.println("Порт: " + uri.getPort());
+        System.out.println("Путь: " + uri.getPath());
+        System.out.println("Параметры: " + uri.getRawQuery());
         System.out.println("Фрагмент: " + uri.getFragment());
         System.out.println("------------------");
         URL url = new uri.toURL();
@@ -28,8 +28,8 @@ public class URIRunner {
         }
         System.out.println("------------------");
         URL resource =URIRunner.class.getResource("/data.csv");
-        System.out.println(resource.toURI().getScheme());
-        System.out.println(resource);
+        System.out.println("Протокол: " + resource.toURI().getScheme());
+        System.out.println("Адрес ресурса: " + resource);
     }
 
 }
