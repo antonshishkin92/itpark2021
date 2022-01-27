@@ -1,15 +1,22 @@
 package hw15;
 
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Spliterator;
+import java.util.stream.Collectors;
 
 
 public class StreamRunner {
     public static void main(String[] args) {
-        List<String> words = List.of("Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "Sed", "sodales", "consectetur", "purus", "at", "faucibus.", "Donec", "mi", "quam", "tempor", "vel", "ipsum", "non", "faucibus", "suscipit", "massa.", "Morbi", "lacinia", "velit", "blandit", "tincidunt", "efficitur.",
-                "Vestibulum", "eget", "metus", "imperdiet", "sapien", "laoreet", "faucibus.", "Nunc", "eget", "vehicula", "mauris,", "ac", "auctor", "lorem.",
-                "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit.", "Integer", "vel", "odio", "nec", "mi", "tempor", "dignissim.");
+        List<String> words = Arrays.asList("Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit",
+                "Sed", "sodales", "consectetur", "purus", "at", "faucibus", "Donec", "mi", "quam", "tempor", "vel", "ipsum", "non", "faucibus", "suscipit", "massa",
+                "Morbi", "lacinia", "velit", "blandit", "tincidunt", "efficitur", "Vestibulum", "eget", "metus", "imperdiet", "sapien", "laoreet", "faucibus", "Nunc", "eget", "vehicula", "mauris", "ac", "auctor", "lorem",
+                "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Integer", "vel", "odio", "nec", "mi", "tempor", "dignissim");
+        Map<String, Integer> quanitityWords = words.parallelStream().collect(Collectors.toConcurrentMap(w->w,w->1,Integer::sum));
+        System.out.println("Количество слов: " + quanitityWords);
+        System.out.println("-----------------");
         Spliterator<String> spliterator = words.stream().spliterator();
         Spliterator<String> newSpliterator = spliterator.trySplit();
         while (spliterator.tryAdvance(System.out::println)) {
