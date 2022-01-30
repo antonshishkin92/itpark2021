@@ -16,5 +16,14 @@ public class EmployerCompareRunner {
         employers.add(new Employer(237, "Мякишева Анна Сергеевна", 12));
         System.out.println(employers);
 
+        for (Iterator<Employer> iterator = employers.iterator(); iterator.hasNext(); ) {
+
+            Employer next = iterator.next();
+            if (new Random().nextBoolean()) {
+                System.out.println("Удаляемый работник: " + next);
+
+            }
+        }
+
     }
 }
