@@ -17,7 +17,6 @@ public class EmployerCompareRunner {
         System.out.println(employers);
 
         for (Iterator<Employer> iterator = employers.iterator(); iterator.hasNext(); ) {
-
             Employer next = iterator.next();
             if (new Random().nextBoolean()) {
                 System.out.println("Удаляемый работник: " + next);
