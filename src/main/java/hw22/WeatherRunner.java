@@ -16,7 +16,7 @@ public class WeatherRunner {
     private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("messages");
     private static final String Exit_PHRASE = RESOURCES.getString("app.exit");
     private static final String APP_ID = "appId";
-    private static final String API_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric";
+    private static final String API_WEATHER_URL = "https://www.gismeteo.ru";
     private static final ThreadLocal<ObjectMapper> OBJECT_MAPPER = new ThreadLocal<>() {
         @Override
         public ObjectMapper get() {
@@ -57,7 +57,7 @@ public class WeatherRunner {
         try {
             return RESOURCES.getString(city);
         } catch (Exception e) {
-            return "Saratov";
+            return "Volgograd";
         }
     }
 }
