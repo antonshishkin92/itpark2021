@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CalculatorRunner {
     public static void main(String[] args) {
-        Calculator calculator = new CalculatorImpl(45, 5);
+//        Calculator calculator = new CalculatorImpl(45, 5);
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("/spring-context.xml");
         Calculator calculator = classPathXmlApplicationContext.getBean(Calculator.class);
 
