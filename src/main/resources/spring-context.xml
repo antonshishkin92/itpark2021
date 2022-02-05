@@ -8,7 +8,7 @@
               <!-- <property name = "a" value="15"/>-->
               <!--<property name = "b" value="25"/>-->
               <constructor-arg name="a" value="12"/>
-              <constructor-arg name="a" value="25"/>
+              <constructor-arg name="b" value="25"/>
        </bean>
 
        <bean id="personDao" class="Lesson25.spring.dao.impl.PersonDaoImpl"/>
