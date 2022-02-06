@@ -11,6 +11,13 @@
               <constructor-arg name="b" value="25"/>
        </bean>
 
+<!--       <bean id="personService" class="Lesson25.spring.service.impl.PersonServiceImpl">-->
+<!-- <constructor-arg name="personDao" ref="personDao"/>-->
+<!--       </bean>-->
+
+       <bean id="personService" class="Lesson25.spring.service.impl.PersonServiceImpl"/>
+
+
        <bean id="personDao" class="Lesson25.spring.dao.impl.PersonDaoImpl"/>
 
 </beans>
