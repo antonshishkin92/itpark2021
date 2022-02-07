@@ -10,11 +10,11 @@ import java.util.Optional;
 
 public class BookRunner {
     public static void main(String[] args) {
-        System.out.println("Сперва удалим таблицы книг и их авторов, если таковые имеются");
+        System.out.println("Удаляем таблицу книг и их авторов, если они есть");
         BookDb.dropBooksAndAuthorsIfExists();
-        System.out.println("Создадим таблицы книг и их авторов");
+        System.out.println("Создём таблицу книг и их авторов");
         BookDb.createBooksAndAuthors();
-        System.out.println("Наполним таблицы данными из ресурсного файла");
+        System.out.println("Заполнение таблицы данными из ресурсного файла");
         CsvMapper.getBookInfo().stream().map(authorAndBook -> Pair.of(
                 new AuthorDto(authorAndBook.getAuthor()),
                 new BookDto(authorAndBook.getIsbn(),
@@ -27,6 +27,6 @@ public class BookRunner {
                     BookDb.insertBook(author.orElse(null), pair.getRight());
                 }
         );
-        System.out.println("Выполнение программы завершено");
+        System.out.println("Завершилось выполнение программы");
     }
 }
