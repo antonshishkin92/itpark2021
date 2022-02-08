@@ -20,4 +20,12 @@
 
        <bean id="personDao" class="Lesson25.spring.dao.impl.PersonDaoImpl"/>
 
+    <bean id="BeanA" class="lesson26.BeanA">
+        <property name="bean" ref="beanB"/>
+    </bean>
+
+    <bean id="BeanB" class="lesson26.BeanB">
+        <property name="bean" ref="beanA"/>
+    </bean>
+
 </beans>
