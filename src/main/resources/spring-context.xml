@@ -7,7 +7,7 @@
        <bean id="calculator" class="lesson25.spring.component.impl.CalculatorImpl">
               <property name = "a" value="15"/>
               <property name = "b" value="25"/>
-             <!-- <constructor-arg name="a" value="12"/>-->
+             <!-- <constructor-arg name="a" value="483"/>-->
              <!-- <constructor-arg name="b" value="25"/>-->
        </bean>
 
