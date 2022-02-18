@@ -36,6 +36,7 @@
         <version>1.3.2</version>
         <spring-boot-starter-parent.version>2.6.3</spring-boot-starter-parent.version>
         <spring-boot-starter.version>2.6.3</spring-boot-starter.version>
+        <spring-shell-table.version>2.0.1.RELEASE</spring-shell-table.version>
     </properties>
 
     <parent>
@@ -130,6 +131,21 @@
             <version>${maven-compiler-plugin.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.shell</groupId>
+            <artifactId>spring-shell-table</artifactId>
+            <version>${spring-shell-table.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <scope>optional</scope>
+        </dependency>
+        <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <version>${json-path.version}</version>
@@ -147,13 +163,14 @@
             <version>${mockito-core.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
-
+            <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
-
     </build>
 </project>
