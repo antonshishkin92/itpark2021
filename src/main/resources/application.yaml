@@ -37,17 +37,17 @@ spring:
     hibernate:
       default_schema: db
       format_sql: true
-   database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
   liquibase:
     change-log: 'classpath:db/migrations/changeLog.xml'
 
 application:
-   value: 12
-   setting:
-     name: *dbUrl
-     file: 'classpath:/file.txt'
-     locale: ru
-     lines:
+  value: 12
+  setting:
+    name: *dbUrl
+    file: 'classpath:/file.txt'
+    locale: ru
+    lines:
       - Тут был текст
       - И здесь должен быть текст
       - Финальный текст
