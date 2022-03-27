@@ -1,4 +1,4 @@
-package lesson31;
+package lesson31.service;
 
 import lesson25.entity.Employee;
 
