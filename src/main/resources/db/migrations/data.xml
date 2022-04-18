@@ -1,0 +1,52 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Shishkin Anton" id="Populate-table-genre">
+        <sqlFile relativeToChangelogFile="true" path="genre-data.sql" />
+    </changeSet>
+
+    <changeSet author="Shishkin Anton" id="Populate-table-author-and-book">
+        <insert tableName="AUTHOR">
+            <!-- Id is auto incremented -->
+            <column name="FIRST_NAME" value="Анна" />
+            <column name="LAST_NAME" value="Литвинова" />
+        </insert>
+
+        <insert tableName="BOOK">
+            <column name="ISBN" value="978-5-04-160060-0" />
+            <column name="NAME" value="Она читала по губам" />
+            <column name="AUTHOR_ID" valueComputed="(SELECT MAX(ID) FROM AUTHOR)" />
+            <column name="GENRE_CODE" value="det" />
+        </insert>
+
+        <insert tableName="AUTHOR">
+            <!-- Id is auto incremented -->
+            <column name="FIRST_NAME" value="Пенелопа" />
+            <column name="LAST_NAME" value="Дуглас" />
+        </insert>
+
+        <insert tableName="BOOK">
+            <column name="ISBN" value="978-5-17-144643-7" />
+            <column name="NAME" value="Курок" />
+            <column name="AUTHOR_ID" valueComputed="(SELECT MAX(ID) FROM AUTHOR)" />
+            <column name="GENRE_CODE" value="tri" />
+        </insert>
+
+        <insert tableName="AUTHOR">
+            <!-- Id is auto incremented -->
+            <column name="FIRST_NAME" value="Дональд" />
+            <column name="LAST_NAME" value="Миллер" />
+        </insert>
+
+        <insert tableName="BOOK">
+            <column name="ISBN" value="978-5-9614-7141-0" />
+            <column name="NAME" value="Правила инвестирования Уоррена Баффетта" />
+            <column name="AUTHOR_ID" valueComputed="(SELECT MAX(ID) FROM AUTHOR)" />
+            <column name="GENRE_CODE" value="bus" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
