@@ -16,7 +16,5 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping class="lesson25.entity.Employee"/>
         <mapping class="lesson25.entity.Department"/>
-        <mapping class="hw25.Author"/>
-        <mapping class="hw25.Book"/>
     </session-factory>
 </hibernate-configuration>
