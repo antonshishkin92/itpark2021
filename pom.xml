@@ -48,6 +48,7 @@
         <nimbus-jose-jwt.version>9.10</nimbus-jose-jwt.version>
         <aspectjlib.version>1.6.2</aspectjlib.version>
         <aspectjweaver.version>1.9.5</aspectjweaver.version>
+        <aspectjrt.version>1.9.9</aspectjrt.version>
     </properties>
 
     <parent>
@@ -199,8 +200,8 @@
         </dependency>
         <dependency>
             <groupId>tech.itpark.shishkin</groupId>
-            <artifactId>common-dto</artifactId>
-            <version>${common-dto.version}</version>
+            <artifactId>base</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
