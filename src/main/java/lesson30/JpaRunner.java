@@ -12,6 +12,6 @@ public class JpaRunner {
     public static void main(String[] args) {
         final ConfigurableApplicationContext applicationContext = SpringApplication.run(JpaRunner.class, args);
         final AuthorService authorService = applicationContext.getBean(AuthorService.class);
-        authorService.save(new Author("Виталий", "Иванов"));
+        authorService.save(new Author("Антон", "Шишкин"));
     }
 }
