@@ -28,8 +28,8 @@ public class Car {
     private String model;
 
     @NotEmpty
-    @Column(name = "number_car", nullable = false)
-    private String numberCar;
+    @Column(name = "number_state", nullable = false)
+    private String numberState;
 
     @NotEmpty
     @Column(name = "name_owner", nullable = false)
@@ -44,12 +44,12 @@ public class Car {
     @JoinColumn(name = "region_id")
     private long region;
 
-    public Car(long id, String category, String brand, String model, String numberCar, String nameOwner, String surnameOwner, long region) {
+    public Car(long id, String category, String brand, String model, String numberState, String nameOwner, String surnameOwner, long region) {
         this.id = id;
         this.category = category;
         this.brand = brand;
         this.model = model;
-        this.numberCar = numberCar;
+        this.numberState = numberState;
         this.nameOwner = nameOwner;
         this.surnameOwner = surnameOwner;
         this.region = region;
