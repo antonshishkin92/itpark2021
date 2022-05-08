@@ -1,6 +1,7 @@
 package antonProject.model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,23 +10,16 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
+@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Regions")
+@Table(name = "Region")
 public class Region {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "code_region",nullable = false,unique = true)
     private Long code;
 
     @NotEmpty
-    @Column(name = "name_Region", nullable = false)
+    @Column(name = "name_Region", nullable = false,unique = true)
     private String nameRegion;
 
-    public Region(Long code, String nameRegion) {
-        this.code = code;
-        this.nameRegion = nameRegion;
-    }
-
-    public Long getRegionCode() {
-        return code;
-    }
 }
