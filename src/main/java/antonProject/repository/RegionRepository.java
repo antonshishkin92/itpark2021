@@ -8,7 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public interface RegionRepository extends JpaRepository<Region,Long> {
-
+public interface RegionRepository extends JpaRepository<Region, Long> {
+    @Query("select r from Region r" +
+            " join fetch r.code code" +
+            " join fetch r.nameRegion name" +
+            " where (:#{#paramDto.codeRegion} is null or r.code = :#{#paramDto.codeRegion}) and" +
+            "(:#{#paramDto.nameRegion} is null or r.nameRegion =:#{#paramDto.nameRegion})")
     List<Region> getByParams(@NotNull RegionParamDto paramDto);
 }

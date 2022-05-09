@@ -22,6 +22,8 @@ public interface CarRepository extends JpaRepository<Car, Long> {
             "(:#{#paramDto.brand} is null or lower(c.brand) like concat('%', :#{#paramDto.brand} , '%')) and" +
             "(:#{#paramDto.model} is null or c.model = :#{#paramDto.model}) and" +
             "(:#{#paramDto.nameOwner} is null or c.nameOwner =:#{#paramDto.nameOwner}) and" +
-            "(:#{#paramDto.surnameOwner} is null or lower(c.surnameOwner) like concat('%', :#{#paramDto.surnameOwner} , '%'))")
+            "(:#{#paramDto.surnameOwner} is null or lower(c.surnameOwner) like concat('%', :#{#paramDto.surnameOwner} , '%')) and" +
+            "(:#{#paramDto.regionCode} is null or c.region =:#{#paramDto.regionCode}) and" +
+            "(:#{#paramDto.numberState} is null or lower(c.numberState) like concat('%', :#{#paramDto.numberState}, '%'))")
     List<Car> getByParams(@NotNull CarParamDto paramDto);
 }
