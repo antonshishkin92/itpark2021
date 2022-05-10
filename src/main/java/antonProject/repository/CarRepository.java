@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public interface CarRepository extends JpaRepository<Car, Long> {
+public interface CarRepository extends JpaRepository<Car, Integer> {
     @Query("select c from Car c" +
             " join fetch c.category categ" +
             " join fetch c.brand b" +

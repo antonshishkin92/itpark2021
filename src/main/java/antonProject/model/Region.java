@@ -16,7 +16,7 @@ import javax.validation.constraints.NotEmpty;
 public class Region {
     @Id
     @Column(name = "code_region",nullable = false,unique = true)
-    private Long code;
+    private Integer code;
 
     @NotEmpty
     @Column(name = "name_Region", nullable = false,unique = true)

@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegionParamDto {
-    private Long codeRegion;
+    private Integer codeRegion;
     private String nameRegion;
 
-    public RegionParamDto(Long codeRegion) {
+    public RegionParamDto(Integer codeRegion) {
         this.codeRegion = codeRegion;
     }
 

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public interface RegionRepository extends JpaRepository<Region, Long> {
+public interface RegionRepository extends JpaRepository<Region, Integer> {
     @Query("select r from Region r" +
             " join fetch r.code code" +
             " join fetch r.nameRegion name" +

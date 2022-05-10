@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @NotEmpty
     @Column(name = "category", nullable = false)
@@ -38,9 +38,9 @@ public class Car {
     @NotEmpty
     @OneToOne(targetEntity = Region.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "region_id")
-    private long region;
+    private Integer region;
 
-    public Car(long id, String category, String brand, String numberState, String nameOwner, String surnameOwner, long region) {
+    public Car(Integer id, String category, String brand, String numberState, String nameOwner, String surnameOwner, Integer region) {
         this.id = id;
         this.category = category;
         this.brand = brand;
@@ -50,11 +50,11 @@ public class Car {
         this.region = region;
     }
 
-    public long getCarId() {
+    public Integer getCarId() {
         return id;
     }
 
-    public long getRegion() {
+    public Integer getRegion() {
         return region;
     }
 }

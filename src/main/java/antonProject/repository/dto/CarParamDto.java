@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CarParamDto {
-    private Long carId;
+    private Integer carId;
     private String category;
     private String brand;
     private String numberState;
     private String nameOwner;
     private String surnameOwner;
-    private Long regionCode;
+    private Integer regionCode;
 
-    public CarParamDto(Long carId, Long regionCode) {
+    public CarParamDto(Integer carId, Integer regionCode) {
         this.carId = carId;
         this.regionCode = regionCode;
     }
