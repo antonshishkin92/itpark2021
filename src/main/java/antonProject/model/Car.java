@@ -24,10 +24,6 @@ public class Car {
     private String brand;
 
     @NotEmpty
-    @Column(name = "model", nullable = false)
-    private String model;
-
-    @NotEmpty
     @Column(name = "number_state", nullable = false)
     private String numberState;
 
@@ -40,15 +36,14 @@ public class Car {
     private String surnameOwner;
 
     @NotEmpty
-    @OneToOne(targetEntity = Region.class,cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Region.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "region_id")
     private long region;
 
-    public Car(long id, String category, String brand, String model, String numberState, String nameOwner, String surnameOwner, long region) {
+    public Car(long id, String category, String brand, String numberState, String nameOwner, String surnameOwner, long region) {
         this.id = id;
         this.category = category;
         this.brand = brand;
-        this.model = model;
         this.numberState = numberState;
         this.nameOwner = nameOwner;
         this.surnameOwner = surnameOwner;

@@ -11,7 +11,6 @@ public class CarParamDto {
     private Long carId;
     private String category;
     private String brand;
-    private String model;
     private String numberState;
     private String nameOwner;
     private String surnameOwner;
