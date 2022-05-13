@@ -15,24 +15,19 @@ public class Car {
     @Column(name = "Car_id")
     private Integer id;
 
-    @NotEmpty
-    @Column(name = "category", nullable = false)
+    @Column(name = "category")
     private String category;
 
-    @NotEmpty
-    @Column(name = "brand", nullable = false)
+    @Column(name = "brand")
     private String brand;
 
-    @NotEmpty
-    @Column(name = "number_state", nullable = false)
+    @Column(name = "number_state")
     private String numberState;
 
-    @NotEmpty
-    @Column(name = "name_owner", nullable = false)
+    @Column(name = "name_owner")
     private String nameOwner;
 
-    @NotEmpty
-    @Column(name = "surname_owner", nullable = false)
+    @Column(name = "surname_owner")
     private String surnameOwner;
 
     @NotEmpty
