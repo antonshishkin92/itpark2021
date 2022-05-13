@@ -12,14 +12,14 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Regions")
+@Table(name = "Region")
 public class Region {
     @Id
-    @Column(name = "code_region",nullable = false,unique = true)
+    @Column(name = "code_region")
     private Integer code;
 
     @NotEmpty
-    @Column(name = "name_Region", nullable = false,unique = true)
+    @Column(name = "name_Region")
     private String nameRegion;
 
 }

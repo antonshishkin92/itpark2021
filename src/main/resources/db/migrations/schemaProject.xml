@@ -1,0 +1,54 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Shishkin Anton" id="Create-table-cars">
+        <preConditions>
+            <not>
+                <tableExists tableName="Cars"/>
+            </not>
+        </preConditions>
+        <createTable tableName="Cars">
+            <column name="Id" type="Integer">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Category" type="VARCHAR(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Brand" type="VARCHAR(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Number_State" type="VARCHAR(300)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="Name_Owner" type="VARCHAR(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Surname_Owner" type="VARCHAR(300)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Region_code" type="Integer">
+                <constraints nullable="false" foreignKeyName="FK_Region_code" references="Region(code)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Shishkin Anton" id="Create-table-region">
+        <preConditions>
+            <not>
+                <tableExists tableName="Region"/>
+            </not>
+        </preConditions>
+        <createTable tableName="Region">
+            <column name="Code" type="Integer">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="Name_Region" type="VARCHAR(300)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -32,7 +32,7 @@ public class Car {
 
     @NotEmpty
     @OneToOne(targetEntity = Region.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "region_id")
+    @JoinColumn(name = "region_code")
     private Integer region;
 
     public Car(Integer id, String category, String brand, String numberState, String nameOwner, String surnameOwner, Integer region) {

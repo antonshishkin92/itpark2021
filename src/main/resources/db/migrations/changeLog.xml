@@ -8,5 +8,6 @@
     <include file="data.xml" relativeToChangelogFile="true"/>
     <include file="schemaHw30.xml" relativeToChangelogFile="true"/>
     <include file="security.xml" relativeToChangelogFile="true"/>
+    <include file="schemaProject.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
