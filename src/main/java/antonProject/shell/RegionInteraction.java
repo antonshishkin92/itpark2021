@@ -23,6 +23,19 @@ public class RegionInteraction {
         log.debug("Добавлен регион {}", region);
     }
 
+    @ShellMethod(value = "Edit region", key = "er")
+    public void editRegion(
+            @ShellOption({"-c", "--code"}) Integer regionCode,
+            @ShellOption({"-n", "--nReg"}) String nameRegion) {
+        regionService.findByCode(regionCode).ifPresent(region -> {
+            region.setCode(regionCode);
+            region.setNameRegion(nameRegion);
+            regionService.save(region);
+            log.debug("Регион {} успешно отредактирован", region);
+        });
+    }
+
+
     @ShellMethod(value = "delete region", key = "dr")
     public void deleteRegion(
             @ShellOption({"-c", "--code"}) Integer regionCode) {
